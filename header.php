@@ -34,15 +34,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="top-header">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-lg-5">
-						<a href="/wpdev">
+					<div class="col-lg-5 col-md-6">
+						<div class="mobile-holder-logo">
+							<a href="/wpdev">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
 						</a>
+						</div>
 					</div>
-					<div class="col-lg-7`">
+					<div class="col-lg-7 col-md-7">
 						<div class="top-header-contact">
 							<a href="tel:0548482872"><i class="fa fa-phone"></i>+233(0) 548 482 872</a>
-							<a href="mailto: quashieeyram@gmail.com"><i class="fa fa-envelope-o"></i>quashieeyram@gmail.com</a>
+							<a href="mailto: quashieeyram@gmail.com" class="top-header-email"><i class="fa fa-envelope-o"></i>quashieeyram@gmail.com</a>
+							<div class="mobile-menu-dropdown">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+								<span>Menu</span> <i class="fa fa-bars"></i>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -50,13 +57,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 			
 		</div>
 
-		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-xl navbar-dark" aria-labelledby="main-nav-label">
 
 			<div class="container">
 
-				<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button> -->
+				<div class="search-input-holder">
+					<div class="title">Quote:</div>
+					<input type="text" placeholder="Type your suburb here">
+				</div>
+
+				<div class="mobile-menu-dropdown">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+					<span>Menu</span> <i class="fa fa-bars"></i>
+					</button>
+				</div>
 
 				<!-- The WordPress Menu goes here -->
 				<?php

@@ -18,7 +18,20 @@ if ( is_front_page() ) {
 }
 ?>
 
-
+<div class="home-hero-banner-top">
+	<div class="row">
+		<div class="col-lg-8">
+			<div class="skip-bin-info-hole">
+				<div class="title">
+					<i class="fa fa-chevron-top"></i> Skip bin instant quote
+				</div>
+				<div class="desc">
+					Simply type your suburb above and you will be provided with an instant
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 get_footer();

@@ -5,32 +5,84 @@ $secondary: black;
 $secondary-300: #3F3F3F;
 $secondary-200: #67686A;
 
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 body {
     font-size: 16px;
-    font-family: 'Roboto' sans-serif;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+    height: 8000px;
 }
 
 .top-header {
     background: black;
     height: 115px;
+    @media(max-width: $md) {
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
     display: flex;
-    //justify-content: center;
     align-items: center;
     background-image: url(../img/header-top-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    
+    .mobile-holder-logo {
+        @media(max-width: $md) {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
     .top-header-contact {
         display: flex;
         justify-content: flex-end;
+        @media(max-width: $md) {
+            justify-content: space-around;
+        }
+        .mobile-menu-dropdown {
+            display: none;
+            @media (max-width: $md) {
+                display: block;
+            }        
+            button{
+                color: white;
+                font-weight: bold;
+                padding: 5px;
+                border: none;
+                border-radius: none;
+                span {
+                    margin-right: 0.5em;
+                }
+                i {
+                    color: white;
+                }
+                &:hover {
+                    background-color: $secondary-300;
+                }
+            }
+        }
         a {
             display: inline-block;
             color: white;
             border: 1px solid $primary;
             padding: 0.5em 1em;
+            margin-left: 10px;
             background: black;
             border-radius: 1.5em;
-            margin-right: 1em;
+            font-size: 16px;
+            @media(max-width: $md) {
+                margin-left: 0px;
+            }
+            &.top-header-email {
+                @media(max-width: $xl) {
+                    display: none;
+                }
+            }
         }
         .fa {
             color: $primary;
@@ -43,4 +95,116 @@ body {
     background: $secondary-300;
     border-top: 1px solid $secondary-200;
     border-bottom: 1px solid $secondary-200;
+    @media(max-width: $md) {
+        height: 30px;
+    }
+
+    #navbarNavDropdown {
+        @media(max-width: $xl) {
+            padding-top: 30px;
+        }
+    }
+
+    .mobile-menu-dropdown {
+        display: none;
+        @media (max-width: $xl) {
+            display: block;
+        }
+        @media (max-width: $md) {
+            display: none;
+        }        
+        button {
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            border: none;
+            border-radius: none;
+            span {
+                margin-right: 0.5em;
+            }
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+
+    .search-input-holder {
+        border: 5px solid $primary;
+        background-color: white;
+        padding: 0px 10px;
+        width: 290px;
+        border-radius: 15px;
+        margin-top: -30px;
+        margin-bottom: -30px;
+        display: flex;
+        align-items: center;
+        @media (max-width:$md) {
+            width: 100%;
+        }
+        .title {
+            color: black;
+            font-size: 18px;
+            font-weight: 300;
+            margin-right: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 10px 0px;
+            border: none;
+            outline: none;
+            &::placeholder {
+                font-weight: bold;
+                color: black;
+                font-size: 16px;
+            }
+        }
+    }
+
+    #main-menu {
+        li {
+            a {
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: white;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &.current-menu-item {
+                a {
+                    color: $primary;
+                }
+            }
+            .dropdown-menu {
+                background-color: $secondary-300;
+            }
+            li {
+                a {
+                    &:hover {
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-hero-banner-top {
+    .skip-bin-info-holder {
+        background: $secondary-300;
+    border: 4px dashed $primary;
+    padding: 30px;
+    .title {
+        font-size: 48px;
+        font-weight: bold;
+        .fa {
+            color: $primary;
+        }
+    }
+    .desc {
+        font-size: 24px;
+        color: $primary;
+        font-weight: 300;
+    }
+    }
 }
