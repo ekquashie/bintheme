@@ -19,14 +19,16 @@ if ( is_front_page() ) {
 ?>
 
 <div class="home-hero-banner-top">
-	<div class="row">
-		<div class="col-lg-8">
-			<div class="skip-bin-info-hole">
-				<div class="title">
-					<i class="fa fa-chevron-top"></i> Skip bin instant quote
-				</div>
-				<div class="desc">
-					Simply type your suburb above and you will be provided with an instant
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="skip-bin-info-holder">
+					<div class="title">
+						<i class="fa fa-chevron-top"></i> Skip bin instant quote
+					</div>
+					<div class="desc">
+						Simply type your suburb above and you will be provided with an instant price accros our range
+					</div>
 				</div>
 			</div>
 		</div>
