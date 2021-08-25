@@ -2,7 +2,7 @@
 $primary: #FFBC00;
 $primary-500: #DFA503;
 $secondary: black;
-$secondary-500: #353535;
+$secondary-500: #202020;
 $secondary-300: #3F3F3F;
 $secondary-200: #67686A;
 
@@ -22,6 +22,28 @@ body {
     height: 8000px;
     overflow-x: hidden;
 }
+
+.button{
+    color: $primary;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border: 1px solid $primary;
+    border-radius: 1.5em;
+    transition: ease 0.25s all;
+    span {
+        margin-right: 0.5em;
+    }
+    i {
+        color: white;
+    }
+    &:hover {
+        background-color: $primary;
+        color: white;
+        text-decoration: none;
+    }
+}
+// font-family: 'Just Another Hand', cursive;
 
 .top-header {
     background: black;
@@ -194,12 +216,30 @@ body {
 }
 
 .home-hero-banner-top {
+    margin-top: 100px;
+    @media(max-width: $md) {
+        margin-top: 45px;
+    }
     .skip-bin-info-holder {
-        margin-top: 100px;
         background: $secondary-500;
         border: 4px dashed $primary;
         padding: 30px;
         border-radius: 30px;
+        position: relative;
+        @media (max-width:$md) {
+            padding: 15px;
+            border-radius: 15px;
+        }
+        .overlay-image-arrow {
+            position: absolute;
+            bottom: 100%;
+            width: 135px;
+            height: 146px;
+            left: 45%;
+            @media(max-width: $md) {
+                display: none;
+            }
+        }
         .title {
             font-size: 35px;
             font-weight: bold;
@@ -211,6 +251,192 @@ body {
             font-size: 18px;
             color: $primary;
             font-weight: 300;
+        }
+    }
+    .seven-days-info {
+        img {
+            @media(max-width: $lg) {
+                display: none;
+            }
+        }
+        .title {
+            display: none;
+            color: $primary;
+            font-size: 36px;
+            margin-top: 15px;
+            font-family: 'Just Another Hand', cursive;
+            @media(max-width: $lg) {
+                display: block;
+            }
+        }        
+    }
+
+    .home-hero-slider {
+        margin-top: 30px;
+        border-radius: 30px;
+        overflow: hidden;
+        margin-bottom: -30px;
+        position: relative;
+        z-index: 500;
+        .slide {
+            .image {
+                height: 420px;
+                background-image: url(../img/slider-1.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: ease all 1s;
+                @media(max-width: $lg) {
+                    height: 320px;
+                }
+                @media(max-width: $md) {
+                    height: 210px;
+                }
+            }
+            .entry-content {
+                display: flex;
+                align-items: center;
+                color: black;
+                padding: 20px;
+                background: white;
+                line-height: 1.15;
+                height: auto;
+                font-weight: bold;
+                padding-bottom: 5px;
+                @media (max-width: $lg) {
+                    padding: 10px 5px;
+                }
+                .info {
+                    padding-left: 30px;
+                    padding-bottom: 20px;
+                    font-size: 30px;
+                    @media(max-width: $lg) {
+                        font-size: 18px;
+                    }
+                }
+                .icon {
+                    @media(max-width: $lg) {
+                        display: none;
+                    }
+                }
+            }
+            .slider-nav {
+                display: flex;
+                margin-right: 30px;
+                a {
+                    margin-left: 0.25em;
+                    margin-right: 0.25em;
+                    font-size: 45px;
+                    color: $primary;
+                    @media(max-width: $lg) {
+                        font-size: 35px;
+                    }
+                    @media(max-width: $md) {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-product-info {
+    height: 1000px;
+    background: $primary;
+    padding-top: 120px;
+
+    .home-special-offer-background-overlay {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 50px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+    .home-special-offer {
+        background: black;
+        display: flex;
+        border-radius: 30px;
+        padding: 50px;
+        position: relative;
+        z-index: 500;
+        @media(max-width: $md) {
+            display: block;
+            padding: 30px;
+        }
+        .discount-circle {
+            height: 268px;
+            min-width: 268px;
+            border-radius: 50%;
+            background: white;
+            color: black;
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: inline-flex;
+            @media(max-width: $xl) {
+                height: 156px;
+                min-width: 156px;
+            }
+            @media(max-width: $md) {
+                margin-bottom: 15px;
+            }
+            .save {
+                font-size: 45px;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                @media(max-width: $xl) {
+                font-size: 30px;
+                }
+            }
+            .percent {
+                font-size: 100px;
+                font-weight: bold;
+
+                @media(max-width: $xl) {
+                font-size: 48px;
+                }
+            }
+        }
+        .entry-content {
+            padding-left: 50px;
+
+            @media(max-width: $md) {
+                padding: 0px;
+            }
+            .title {
+                font-size: 36px;
+                color: $primary;
+                font-weight: bold;
+                @media(max-width: $xl) {
+                    font-size: 30px;
+                }
+                @media(max-width: $md) {
+                    font-size: 20px;
+                }
+            }
+            .desc {
+                font-size: 22px;
+                font-weight: 300;
+                margin-bottom: 30px;
+                margin-top: 30px;
+                @media(max-width: $xl) {
+                    font-size: 18px;
+                }
+                @media(max-width: $md) {
+                    font-size: 16px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
         }
     }
 }
